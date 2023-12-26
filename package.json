@@ -1,0 +1,12 @@
+{
+  "name": "cardekho-clone",
+  "version": "1.0.0",
+  "description": "CarDekho clone application",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "author": "Praneet Suyal",
+  "license": "MIT"
+}
