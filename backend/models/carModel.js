@@ -18,14 +18,13 @@ const usedCarSchema = new mongoose.Schema({
     },
     seller: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
         ref: 'User',
       },
     isAvailable: {
-          type: Number,
-          required: true,
-          default: 0,
-      },
+        type: Boolean,
+        required: true,
+        default: false,
+    },
 },{
     timestamps: true,
 });
@@ -33,7 +32,6 @@ const usedCarSchema = new mongoose.Schema({
 const carSchema = new mongoose.Schema({
     buyer: {
         type: mongoose.Schema.ObjectId,
-        required: true,
         ref: "User",
     },
     model: {
@@ -52,21 +50,18 @@ const carSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    description: {
-        type: String,
-        required: true,
-    },
-    isNew: {
+    isUsed: {
           type: Boolean,
           required: true,
           default: false,
       },
     usedCarDetails: [usedCarSchema],
-    price: {
-        type: Number,
-        required: true,
-        default: 0,
-      },
+    priceRange: [
+        {
+          variant: { type: String, required: true },
+          price: { type: Number, required: true },
+        }
+      ],
 },{
     timestamps: true,
 });
