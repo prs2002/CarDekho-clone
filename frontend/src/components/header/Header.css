@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 30px 0px 30px;
+    
+   }
+  
+  @media (max-width: 800px) {
+    .header {
+      flex-direction: column;
+    }
+}
+.userLogin:hover{
+    cursor: pointer;
+}
+
+.fixed-top{
+  position: sticky;
+  top:0;
+}
+.MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+  background: #f7f7f7;
+  border:none
+}

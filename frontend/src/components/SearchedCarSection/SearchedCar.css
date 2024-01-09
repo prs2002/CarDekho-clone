@@ -1,0 +1,34 @@
+.tabTitle{
+    /* style={{padding:"12px 0px" , borderBottom:"solid orange 3px", color:"orange"}}> */
+    padding: 12px 0px;
+    margin-right: 40px;
+    
+}
+
+.tabTitle:hover{
+    cursor:pointer; 
+    border-bottom: solid  rgb(247, 93, 52) 3px;
+    color:  rgb(247, 93, 52);
+}
+
+.slider{
+  display: flex;
+  max-width: 100%;
+ 
+ transform: translate(0px, 0px);
+    transition: transform 0.4s ease-in-out 0s;
+}
+
+.hoverPointer:hover{
+    cursor: pointer;
+}
+
+.moveLeft {
+    animation-name: moveLeft;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes moveLeft {
+    from {transform: translate(0px, 0px);} 
+    to {transform: translate(-308px, 0px);}
+  }

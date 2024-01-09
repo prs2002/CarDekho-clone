@@ -1,8 +1,13 @@
 import React from 'react'
+import Slideshow from "../components/banner/Slideshow";
+import SearchedCar from "../components/SearchedCarSection/SearchedCar";
 
 const HomeScreen = () => {
   return (
-    <div>HomeScreen</div>
+    <>
+      <Slideshow/>
+      <SearchedCar/>
+    </>
   )
 }
 
