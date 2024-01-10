@@ -1,15 +1,15 @@
 import { Avatar, Divider } from "@mui/material";
 import React from "react";
 import "./SearchedCar.css";
-import Card from "../common/card";
+import cars from '../../cars';
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 import { grey } from "@mui/material/colors";
+import Card from "../common/Card";
 
 export default function SearchedCar() {
 
   let initLefttranslate="0";
-
 
   const nextSlide =()=>{  
     initLefttranslate-=325;
@@ -61,18 +61,12 @@ export default function SearchedCar() {
         <Divider />
 
         <div style={{overflow: "hidden"}}>
-          <div className ="slider abc" style={{transform:"translate(0px,0px)",transition:"transform 0.4s ease-in-out 0s"}}>
-          <div className="slider-item"><Card title="Maruti Suzuki 1" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 2" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 3" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 4" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 5" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 6" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 7" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 8" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 9" /></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 10"/></div>
-          <div className="slider-item"><Card title="Maruti Suzuki 11"/></div>
+        <div className ="slider abc" style={{transform:"translate(0px,0px)",transition:"transform 0.4s ease-in-out 0s"}}>
+          {
+            cars.map((car) => (
+              <div className="slider-item"><Card product= {car} /></div>
+            ))
+          }
           </div>
         </div> 
       </div>
