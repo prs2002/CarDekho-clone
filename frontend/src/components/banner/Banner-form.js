@@ -3,7 +3,6 @@ import "./Banner-form.css";
 import { Button } from "@mui/material";
 import RowRadioButtonsGroup from "./Banner-radioButton";
 import SelectLabels from "./Banner-form-select";
-import SendIcon from "@mui/icons-material/Send";
 import JSON from "../../data/car_details.json";
 import downArrowIcon from "../../resources/down-arrow-icon.png";
 
@@ -137,13 +136,11 @@ export default function Banner_Form() {
             width: "350px",
             marginTop: "24px",
             padding: "15px 0 15px 0",
+            backgroundColor: "#FF6347",
           }}
         >
           Search
         </Button>
-        <div style={{ marginTop: "20px", float: "right" }}>
-          <Button endIcon={<SendIcon />}> Advanced Search</Button>
-        </div>
       </div>
     </div>
   );

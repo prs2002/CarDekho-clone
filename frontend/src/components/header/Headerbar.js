@@ -25,6 +25,9 @@ export default function Headerbar() {
   const handleChange = (event) => {
     setLang(event.target.value);
   };
+  const redirectToLogin = () => {
+    console.log("Chutiya");
+  };
   return (
     <div className="fixed-top" style={{ backgroundColor: "white" , zIndex:"5"}}>
       <div className="header" style={{ marginTop: "15px", marginBottom: "15px" }}>
@@ -86,7 +89,9 @@ export default function Headerbar() {
               <FavoriteBorderOutlinedIcon fontSize="small" />
             </div>
             <AccountCircleOutlinedIcon fontSize="small" />
-            <span style={{ marginLeft: "5px" }}>Login / Register</span>
+            <button style={{ marginLeft: '5px' }} onClick={redirectToLogin}>
+              Login / Register
+            </button>
           </div>
         </div>
       </div>

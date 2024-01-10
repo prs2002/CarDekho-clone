@@ -18,9 +18,10 @@ export default function RowRadioButtonsGroup(props) {
         name="row-radio-buttons-group"
         value={value}
         onChange={handleChange}
+        
       >
-        <FormControlLabel value="By_Budget" control={<Radio disableRipple />} onClick={()=>props.HandleClick("By_Budget")} label="By Budget" />
-        <FormControlLabel value="By_Model" control={<Radio disableRipple />} onClick={()=>props.HandleClick("By_Model")} label="By Model" />
+        <FormControlLabel value="By_Budget" control={<Radio style={{ color: '#FF6347' }} disableRipple />} onClick={()=>props.HandleClick("By_Budget")} label="By Budget" />
+        <FormControlLabel value="By_Model" control={<Radio style={{ color: '#FF6347' }} disableRipple />} onClick={()=>props.HandleClick("By_Model")} label="By Model" />
       </RadioGroup>
     </FormControl>
   );
