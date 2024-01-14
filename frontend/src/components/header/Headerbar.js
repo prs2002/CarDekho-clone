@@ -2,23 +2,19 @@ import React from "react";
 import "./Header.css";
 import "./Dropdown.css";
 import logo from "../../resources/logo.svg";
-import Autocomplete from "@mui/material/Autocomplete";
-import TextField from "@mui/material/TextField";
 import {
-  Avatar,
   Divider,
   FormControl,
   MenuItem,
   Select,
   Typography,
 } from "@mui/material";
-import { grey } from "@mui/material/colors";
-import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { useState } from "react";
 import Dropdown from "./Dropdown";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import SearchBox from "./SearchBox";
 
 export default function Headerbar() {
   const [lang, setLang] = useState("English");
@@ -39,21 +35,7 @@ export default function Headerbar() {
           />
         </div>
         <div style={{ display: "flex" }}>
-          <Autocomplete
-            disablePortal
-            id="combo-box-demo"
-            options={[]}
-            sx={{ width: 400 }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Search Cars or Brands eg. Swift, or Maruti"
-              />
-            )}
-          />
-          <Avatar sx={{ bgcolor: grey[900], height: 56 }} variant="square">
-            <SearchIcon />
-          </Avatar>
+          <SearchBox/>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <div>
@@ -118,8 +100,6 @@ export default function Headerbar() {
           </div>
           </div>
           <div className="top-border" style={{paddingTop: "15px", paddingBottom: "15px"}}><Dropdown title="NEWS & REVIEWS" /></div>
-          <div className="top-border" style={{paddingTop: "15px", paddingBottom: "15px"}}><Dropdown title="CARDEKHO VENTURES" /></div>
-          <div className="top-border" style={{paddingTop: "15px", paddingBottom: "15px"}}><Dropdown title="MORE" /></div>
         </div>
         <div
           className="header"
