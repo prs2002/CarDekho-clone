@@ -1,5 +1,5 @@
 import { Avatar, Divider } from "@mui/material";
-import React from "react";
+import {useState, React} from "react";
 import "./SearchedCar.css";
 import cars from '../../cars';
 import NavigateNextOutlinedIcon from "@mui/icons-material/NavigateNextOutlined";
@@ -9,19 +9,27 @@ import Card from "../common/Card";
 
 export default function SearchedCar() {
 
-  let initLefttranslate="0";
+// Initialize state
+const [currentSlide, setCurrentSlide] = useState(0);
 
-  const nextSlide =()=>{  
-    initLefttranslate-=325;
-    let bb= document.getElementsByClassName("abc")
-    bb[0].style.transform="translate("+initLefttranslate+"px, 0px";
-    
-  };
-  const previousSlide =()=>{  
-    initLefttranslate+=325;
-    let bb= document.getElementsByClassName("abc")
-    bb[0].style.transform="translate("+initLefttranslate+"px, 0px";
-  };
+const nextSlide = () => {
+  const maxSlides = cars.length;
+
+  if (currentSlide < maxSlides - 1) {
+    setCurrentSlide(currentSlide + 1);
+  } else {
+    setCurrentSlide(0); // Reset to the first slide if at the end
+  }
+};
+
+const previousSlide = () => {
+  if (currentSlide > 0) {
+    setCurrentSlide(currentSlide - 1);
+  } else {
+    setCurrentSlide(cars.length - 1); // Go to the last slide if at the beginning
+  }
+};
+
 
 
   return (
@@ -61,7 +69,7 @@ export default function SearchedCar() {
         <Divider />
 
         <div style={{overflow: "hidden"}}>
-        <div className ="slider abc" style={{transform:"translate(0px,0px)",transition:"transform 0.4s ease-in-out 0s"}}>
+        <div className="slider abc" style={{ transform: `translate(${-currentSlide * 325}px, 0px)`, transition: "transform 0.4s ease-in-out 0s" }}>
           {
             cars.map((car) => (
               <div className="slider-item"><Card product= {car} /></div>

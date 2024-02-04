@@ -91,13 +91,11 @@ export default function Headerbar() {
           <div className="top-border" style={{paddingTop: "15px", paddingBottom: "15px"}}><Dropdown title="USED CAR" /></div>
           <div className="top-border" style={{paddingTop: "15px", paddingBottom: "15px"}}><Dropdown title="SELL CAR" /></div>
           <div className="top-border" style={{paddingTop: "15px", paddingBottom: "15px"}}>
-          <div className="dropdown">
             <button className="dropbtn">
               <Typography variant="button" display="block" gutterBottom>
                 COMPARE CAR
               </Typography>
             </button>
-          </div>
           </div>
           <div className="top-border" style={{paddingTop: "15px", paddingBottom: "15px"}}><Dropdown title="NEWS & REVIEWS" /></div>
         </div>
